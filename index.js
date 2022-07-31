@@ -25,3 +25,15 @@ console.log(calculateTotal(testItems, {}))
 console.log(calculateTotal(testItems, { shipping : 0 }))
 console.log(calculateTotal(testItems, { discount : .75 }))
 console.log(calculateTotal(testItems, { shipping : 12 }))
+
+// a function that returns the number converted to string
+function numberToAccountingString(number) {
+  if ( number == null ) return
+  if ( number < 0 ) return `(${Math.abs(number)})`
+  return number.toString()
+}
+
+console.log(numberToAccountingString(undefined))
+console.log(numberToAccountingString(0))
+console.log(numberToAccountingString(10))
+console.log(numberToAccountingString(-5))
