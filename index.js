@@ -37,3 +37,29 @@ console.log(numberToAccountingString(undefined))
 console.log(numberToAccountingString(0))
 console.log(numberToAccountingString(10))
 console.log(numberToAccountingString(-5))
+
+
+//higher order function
+//--------------------------------------------------
+const radius = [1, 2, 3, 4]
+const add = (rad) => {
+    return rad + 1
+} 
+Array.prototype.calculate = function (logic) {
+    const output = []
+    for (let i = 0; i < this.length; i++){
+        output.push(logic(this[i]))
+    }
+    return output
+}
+const calculate = (rad, logic) => {
+    const output = []
+    for (let i = 0; i < rad.length; i++){
+        output.push(logic(rad[i]))
+    }
+    return output
+}
+console.log(calculate(radius,add))
+console.log(radius.calculate(add))
+console.log(radius.map(add))
+//--------------------------------------------------
